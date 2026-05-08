@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Verdant Walls</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { forest: '#2D4F1E', sage: '#8FA885', ecoLight: '#F9FBF7', ecoDark: '#121412' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ecoDark text-white min-h-screen flex items-center justify-center p-6 overflow-hidden relative">
+
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-b from-ecoDark/80 via-ecoDark/40 to-ecoDark"></div>
+    </div>
+
+    <div class="max-w-4xl w-full text-center relative z-10">
+        <!-- 2. Brand Message Section -->
+        <div class="mb-16" data-aos="fade-down">
+            <div class="inline-flex items-center space-x-2 mb-12">
+                <div class="w-12 h-12 bg-forest rounded-full flex items-center justify-center">
+                    <i data-lucide="leaf" class="text-white w-7 h-7"></i>
+                </div>
+                <span class="text-3xl font-outfit font-bold tracking-tight">VERDANT</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-outfit font-bold mb-6">Something <span class="text-sage italic">Natural</span> is Growing.</h1>
+            <p class="text-xl text-white/60 max-w-2xl mx-auto">We're meticulously crafting our new digital experience. A destination for botanical art and biophilic design is coming soon.</p>
+        </div>
+
+        <!-- 1. Countdown Timer -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20" data-aos="fade-up" data-aos-delay="100">
+            <div class="glass p-8 rounded-3xl border-white/10">
+                <div class="text-5xl font-bold mb-2">14</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-sage">Days</div>
+            </div>
+            <div class="glass p-8 rounded-3xl border-white/10">
+                <div class="text-5xl font-bold mb-2">08</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-sage">Hours</div>
+            </div>
+            <div class="glass p-8 rounded-3xl border-white/10">
+                <div class="text-5xl font-bold mb-2">42</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-sage">Minutes</div>
+            </div>
+            <div class="glass p-8 rounded-3xl border-white/10">
+                <div class="text-5xl font-bold mb-2">15</div>
+                <div class="text-xs font-bold uppercase tracking-widest text-sage">Seconds</div>
+            </div>
+        </div>
+
+        <!-- 3. Email Subscription Form -->
+        <div class="max-w-md mx-auto mb-16" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-sm font-bold uppercase tracking-widest text-white/40 mb-6">Notify me on launch</p>
+            <form class="flex space-x-2">
+                <input type="email" placeholder="Your Email" class="flex-grow px-8 py-4 rounded-full bg-white/10 border border-white/20 text-white outline-none focus:bg-white/20 transition-all">
+                <button type="submit" class="bg-white text-forest px-8 rounded-full font-bold hover:bg-sage transition-all">Join</button>
+            </form>
+        </div>
+
+        <!-- 4. Social Media Links -->
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init();
+        lucide.createIcons();
+    </script>
+    <button id="scroll-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+</body>
+</html>

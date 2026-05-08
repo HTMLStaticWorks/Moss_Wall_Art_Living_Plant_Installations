@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Verdant Walls Portal</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { forest: '#2D4F1E', sage: '#8FA885', earth: '#D4BDAC', ecoLight: '#F9FBF7', ecoDark: '#121412' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight min-h-screen flex items-center justify-center p-6 relative">
+
+    <!-- Accessibility Controls -->
+    <div class="fixed bottom-4 left-4 md:top-8 md:right-8 md:bottom-auto md:left-auto flex items-center space-x-2 md:space-x-4 z-[100]">
+        <button id="rtl-toggle" class="p-2 md:p-3 bg-white dark:bg-white/10 border border-forest/10 rounded-xl hover:bg-forest hover:text-white transition-all duration-300 shadow-xl active:scale-95 flex items-center justify-center min-w-[40px] md:min-w-[50px]" title="Toggle RTL">
+            <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest pointer-events-none">RTL</span>
+        </button>
+        <button id="theme-toggle" class="p-2 md:p-3 bg-white dark:bg-white/10 border border-forest/10 rounded-xl hover:bg-forest hover:text-white transition-all duration-300 shadow-xl active:scale-95 flex items-center justify-center w-10 h-10 md:w-[50px] md:h-[50px]" title="Toggle Theme">
+            <svg class="w-4 h-4 md:w-5 md:h-5 dark:hidden text-forest pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></svg>
+            <svg class="w-4 h-4 md:w-5 md:h-5 hidden dark:block text-sage pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+    </div>
+
+    <!-- Signup Container -->
+    <div class="w-full max-w-md" data-aos="fade-up">
+        <!-- Logo -->
+        <div class="flex justify-center mb-12">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div class="w-12 h-12 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                    <i data-lucide="leaf" class="text-white w-7 h-7"></i>
+                </div>
+                <span class="text-3xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+            </a>
+        </div>
+            <div id="auth-container" class="space-y-8">
+                <!-- Header -->
+                <div class="text-center">
+                    <h2 id="auth-title" class="text-4xl font-outfit font-bold mb-2">Create Account</h2>
+                    <p id="auth-subtitle" class="text-gray-500">Join the Verdant community today.</p>
+                </div>
+
+                <!-- Forms -->
+                <div class="relative">
+                    <!-- Signup Form (Primary) -->
+                    <form id="signup-form" class="space-y-5 transition-all duration-500">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-gray-400">First Name</label>
+                                <input type="text" placeholder="Jane" class="w-full px-6 py-4 rounded-2xl bg-ecoLight dark:bg-[#1a1c1a] border border-forest/10 focus:border-forest outline-none transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-gray-400">Last Name</label>
+                                <input type="text" placeholder="Doe" class="w-full px-6 py-4 rounded-2xl bg-ecoLight dark:bg-[#1a1c1a] border border-forest/10 focus:border-forest outline-none transition-all">
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-400">Email Address</label>
+                            <input type="email" placeholder="jane@example.com" class="w-full px-6 py-4 rounded-2xl bg-ecoLight dark:bg-[#1a1c1a] border border-forest/10 focus:border-forest outline-none transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-widest text-gray-400">Password</label>
+                            <input type="password" placeholder="Min. 8 characters" class="w-full px-6 py-4 rounded-2xl bg-ecoLight dark:bg-[#1a1c1a] border border-forest/10 focus:border-forest outline-none transition-all">
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <input type="checkbox" id="terms" class="mt-1 w-4 h-4 rounded border-forest/10 text-forest focus:ring-forest">
+                            <label for="terms" class="text-sm text-gray-500">I agree to the <a href="#" class="text-forest underline">Terms of Service</a> and <a href="#" class="text-forest underline">Privacy Policy</a>.</label>
+                        </div>
+                        <button type="submit" class="btn-premium w-full py-4 text-lg">Create Account</button>
+                        
+                        <!-- Toggle to Login -->
+                        <div class="text-center mt-8">
+                            <p class="text-sm text-gray-500">Already have an account? 
+                                <a href="login.html" class="text-forest font-bold hover:underline">Log in</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                </div>
+            </div>
+
+            <!-- Social Media Connections -->
+            <div class="mt-12 pt-8 border-t border-forest/5 text-center">
+                <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Connect with us</p>
+                <div class="flex items-center justify-center space-x-4">
+                    <a href="#" class="w-10 h-10 bg-white dark:bg-white/5 border border-forest/10 rounded-xl flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300 group shadow-sm">
+                        <svg class="w-4 h-4 text-forest dark:text-sage group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white dark:bg-white/5 border border-forest/10 rounded-xl flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300 group shadow-sm">
+                        <svg class="w-4 h-4 text-forest dark:text-sage group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white dark:bg-white/5 border border-forest/10 rounded-xl flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300 group shadow-sm">
+                        <svg class="w-4 h-4 text-forest dark:text-sage group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white dark:bg-white/5 border border-forest/10 rounded-xl flex items-center justify-center hover:bg-forest hover:text-white transition-all duration-300 group shadow-sm">
+                        <svg class="w-4 h-4 text-forest dark:text-sage group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                </div>
+            </div>
+        
+        <footer class="mt-12 text-center text-xs text-gray-400">
+            &copy; 2026 Verdant Walls Installations. <br>
+            <a href="index.html" class="hover:text-forest underline">Privacy</a> &bull; <a href="index.html" class="hover:text-forest underline">Terms</a>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // AOS and Lucide are initialized in main.js
+    </script>
+    <button id="scroll-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Verdant Walls - Luxury Moss Art & DIY Kits</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Browse our curated collection of preserved moss wall art, living plant frames, and botanical DIY kits.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { forest: '#2D4F1E', sage: '#8FA885', earth: '#D4BDAC', ecoLight: '#F9FBF7', ecoDark: '#121412' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[1000] nav-blur transition-all duration-300 border-b border-forest/10">
+        <div class="w-full px-6 md:px-12 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                    <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <div class="relative group">
+                    <button class="flex items-center hover:text-forest transition-colors py-2">
+                        Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-48 bg-white dark:bg-ecoDark shadow-xl rounded-2xl p-2 hidden group-hover:block animate-fade-in border border-forest/5">
+                        <a href="index.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 1</a>
+                        <a href="home-niche.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-forest">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-forest transition-colors">About</a>
+                <a href="services.html" class="hover:text-forest transition-colors">Services</a>
+                <a href="shop.html" class="hover:text-forest transition-colors text-forest border-b-2 border-forest">Shop</a>
+                <a href="blog.html" class="hover:text-forest transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 hover:scale-110">
+                    <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
+                    <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
+                </button>
+                <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
+                    <span>RTL</span>
+                </button>
+                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
+                </a>
+                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+            <div class="space-y-4">
+                <a href="index.html" class="text-lg font-medium">Home 1</a>
+                <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
+            </div>
+            <a href="about.html" class="text-lg font-medium">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="shop.html" class="text-lg font-bold text-forest">Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
+            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
+                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                <span>View Cart (2)</span>
+            </a>
+            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
+                <i data-lucide="languages" class="w-6 h-6"></i>
+                <span>Toggle RTL Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Shop Hero -->
+    <header class="pt-32 pb-16 bg-ecoLight dark:bg-[#1a1c1a]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-outfit font-bold mb-6" data-aos="fade-right">Botanical <span class="text-forest">Collection</span></h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-8" data-aos="fade-right" data-aos-delay="100">Bring the serenity of the outdoors into your space with our handcrafted moss art and premium DIY kits.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Content -->
+    <section class="pb-24 bg-ecoLight dark:bg-[#1a1c1a]">
+        <div class="container mx-auto px-6">
+            <!-- Filters & Search -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 space-y-4 md:space-y-0" data-aos="fade-up">
+                <div class="flex items-center space-x-4 overflow-x-auto pb-2 w-full md:w-auto">
+                    <button class="px-6 py-2 bg-forest text-white rounded-full font-bold">All Products</button>
+                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">Moss Art</button>
+                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">DIY Kits</button>
+                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">Planters</button>
+                </div>
+                <div class="relative w-full md:w-80">
+                    <input type="text" placeholder="Search products..." class="w-full pl-12 pr-6 py-3 bg-white dark:bg-ecoDark rounded-full border border-forest/10 focus:border-forest outline-none transition-all">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center space-x-4">
+                            <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-forest scale-0 group-hover:scale-100 transition-transform duration-300 hover:bg-forest hover:text-white" title="Quick View">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-forest scale-0 group-hover:scale-100 transition-transform duration-300 delay-75 hover:bg-forest hover:text-white" title="Add to Wishlist">
+                                <i data-lucide="heart" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                        <span class="absolute top-4 left-4 px-4 py-1 bg-forest text-white text-xs font-bold rounded-full uppercase tracking-widest">New</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Scandinavian Moss Hexagon</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Preserved Moss Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Handcrafted with sustainably sourced reindeer moss. Zero maintenance required.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">12" x 12"</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Oak Frame</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$129.00</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center space-x-4">
+                            <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-forest scale-0 group-hover:scale-100 transition-transform duration-300 hover:bg-forest hover:text-white" title="Quick View">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Beginner Moss Kit</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">DIY Botanical Kits</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Everything you need to create your first 12x12 moss art. Includes frame and tools.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Full Kit</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Beginner</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">12 Left</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$45.00</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Zen Forest Frame</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Luxury Living Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A premium oak frame featuring a diverse landscape of mosses and ferns.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">24" x 36"</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Premium Oak</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$289.00</p>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                        <span class="absolute top-4 left-4 px-4 py-1 bg-red-500 text-white text-xs font-bold rounded-full uppercase tracking-widest">Sale</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Terrarium Workshop Kit</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">DIY Botanical Kits</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Comprehensive kit for building closed-ecosystem terrariums at home.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Glass Included</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Advanced</span>
+                        <span class="text-[10px] px-2 py-1 bg-orange-100 text-orange-700 rounded-md font-bold">Low Stock</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <p class="text-xl font-bold text-forest">$89.00</p>
+                        <p class="text-sm text-gray-400 line-through">$120.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Emerald Circle Art</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Circular Moss Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A 24-inch diameter circular piece featuring deep forest green preserved moss.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">24" Dia</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Minimalist</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$199.00</p>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Nordic Stone Planter</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Planters</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.6</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Hand-cast concrete planter with a pre-installed moss top. Modern and brutalist.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Concrete</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Weatherproof</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$65.00</p>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Forest Floor Terrarium</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Living Glassware</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A self-sustaining miniature forest in a hand-blown glass vessel.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">10" Height</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Borosilicate Glass</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">Handcrafted</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$145.00</p>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Vertical Garden Module</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Wall Systems</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Modular 2x2ft panels designed for easy interlocking on any wall surface.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">2ft x 2ft</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Easy-Lock</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">Customizable</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$320.00</p>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Desert Bloom Planter</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Living Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Terracotta planter featuring a curated mix of succulents and volcanic stone.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">8" Round</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Low Light</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$55.00</p>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Midnight Moss Trio</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Preserved Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Three 6x6" squares featuring mood moss, cushion moss, and sheet moss.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Set of 3</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Black Frame</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$175.00</p>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Botanical Mist System</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Maintenance</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Smart automated mister for maintaining humidity in living wall systems.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">App Control</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">2L Tank</span>
+                        <span class="text-[10px] px-2 py-1 bg-orange-100 text-orange-700 rounded-md font-bold">Low Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$120.00</p>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Custom Monogram Piece</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Bespoke Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Your chosen initial or logo handcrafted in premium Icelandic moss.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Made to Order</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Personalized</span>
+                        <span class="text-[10px] px-2 py-1 bg-blue-100 text-blue-700 rounded-md font-bold">Consultation</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">From $250.00</p>
+                </div>
+
+                <!-- Product 13 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Alpine Slate Frame</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Mixed Media Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A rugged landscape of preserved mosses interspersed with natural slate stone fragments.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">18" x 24"</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Natural Slate</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$215.00</p>
+                </div>
+
+                <!-- Product 14 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Verdant Pillar</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Botanical Sculpture</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A free-standing 5ft column covered in a 360-degree tapestry of living plants.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">5ft Height</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Self-Watering</span>
+                        <span class="text-[10px] px-2 py-1 bg-blue-100 text-blue-700 rounded-md font-bold">Custom Order</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$850.00</p>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Hanging Fern Sphere</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Living Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.6</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A lush sphere of living ferns and mosses, designed for overhead suspension.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">12" Sphere</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Indoor Only</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$110.00</p>
+                </div>
+
+                <!-- Product 16 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Lush Landscape Mural</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Wall Systems</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A massive 4-panel preserved moss mural depicting a serene mountain range.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">48" x 96"</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">4-Panel Set</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">Artisan Piece</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$1,250.00</p>
+                </div>
+
+                <!-- Product 17 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Golden Ratio Frame</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Geometric Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Fibonacci-inspired spiral design using three different shades of preserved reindeer moss.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">20" x 20"</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Geometric</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$185.00</p>
+                </div>
+
+                <!-- Product 18 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Arctic Tundra Tray</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Tabletop Decor</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.7</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Low-profile walnut tray with a combination of white lichen and deep green cushion moss.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">12" Tray</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Walnut Wood</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$95.00</p>
+                </div>
+
+                <!-- Product 19 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Botanical Smart Light</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Maintenance</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Full-spectrum UV growth light disguised as a sleek, minimalist pendant lamp.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Smart Sync</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Full Spectrum</span>
+                        <span class="text-[10px] px-2 py-1 bg-orange-100 text-orange-700 rounded-md font-bold">Low Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$240.00</p>
+                </div>
+
+                <!-- Product 20 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Mossy Coffee Table</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Furniture</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Tempered glass coffee table with a living moss and stone ecosystem visible beneath.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Handcrafted</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Ecosystem</span>
+                        <span class="text-[10px] px-2 py-1 bg-blue-100 text-blue-700 rounded-md font-bold">Consultation</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$1,450.00</p>
+                </div>
+
+                <!-- Product 21 -->
+                <div class="group" data-aos="fade-up">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Vertical Herb Garden</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Living Systems</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.6</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A wall-mounted living garden designed specifically for fresh kitchen herbs.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Kitchen Ready</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">6 Pockets</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$125.00</p>
+                </div>
+
+                <!-- Product 22 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Ancient Bark Art</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Mixed Media Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.9</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Authentic reclaimed oak bark textured with vibrant preserved moss and lichen.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">One-of-a-kind</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Reclaimed</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">Handcrafted</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$340.00</p>
+                </div>
+
+                <!-- Product 23 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Zen Stone Cairn</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Sculpture</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">4.8</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">Stacked river stones accented with cushion moss. A symbol of balance and peace.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">River Stone</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Zen Decor</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">In Stock</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$78.00</p>
+                </div>
+
+                <!-- Product 24 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    </div>
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-lg font-bold group-hover:text-forest transition-colors">Bonsai Moss Forest</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-wider">Living Art</p>
+                        </div>
+                        <div class="flex items-center text-yellow-500">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <span class="text-xs font-bold ml-1">5.0</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">A miniature ancient forest featuring a 5-year-old Juniper bonsai and lush moss floor.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">Living Bonsai</span>
+                        <span class="text-[10px] px-2 py-1 bg-sage/10 text-forest rounded-md font-bold">5yr Old</span>
+                        <span class="text-[10px] px-2 py-1 bg-green-100 text-green-700 rounded-md font-bold">Expert Care</span>
+                    </div>
+                    <p class="text-xl font-bold text-forest">$420.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
+        <div class="w-full px-6 md:px-16 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <!-- Brand Info -->
+                <div class="space-y-8" data-aos="fade-up">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                            <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-outfit font-bold tracking-tight text-white">VERDANT</span>
+                    </a>
+                    <p class="text-white/60 leading-relaxed max-w-xs">
+                        Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Navigation -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Home</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> About Us</a></li>
+                        <li><a href="services.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Services</a></li>
+                        <li><a href="shop.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Shop</a></li>
+                        <li><a href="blog.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Blog</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Contact Details</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="mail" class="w-5 h-5 text-forest"></i>
+                            <span>hello@verdantwalls.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="phone" class="w-5 h-5 text-forest"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-forest"></i>
+                            <span>Copenhagen, Denmark</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Newsletter</h4>
+                    <p class="text-white/60 mb-6 leading-relaxed">Join our inner circle for botanical insights and exclusive eco-luxury offers.</p>
+                    <div class="relative group">
+                        <input type="email" placeholder="Your email address" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-16 outline-none focus:border-forest transition-all text-white">
+                        <button class="absolute right-2 top-2 bottom-2 bg-forest hover:bg-forest/80 px-4 rounded-xl transition-all">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-4 text-white/40 text-sm">
+                        <i data-lucide="phone" class="w-4 h-4 text-forest"></i>
+                        <span>+1 (555) BOTANIC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-white/40 text-sm">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <p>&copy; 2026 Verdant Walls Installations. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-forest transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-forest transition-colors text-white/20">|</a>
+                    <a href="#" class="hover:text-forest transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-forest transition-colors text-white/20">|</a>
+                    <a href="#" class="hover:text-forest transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        lucide.createIcons();
+    </script>
+    <button id="scroll-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+</body>
+</html>

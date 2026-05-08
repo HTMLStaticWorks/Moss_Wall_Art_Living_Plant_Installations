@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niche Botanical | Bespoke Living Walls & DIY Kits</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { forest: '#2D4F1E', sage: '#8FA885', earth: '#D4BDAC', ecoLight: '#F9FBF7', ecoDark: '#121412' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[1000] nav-blur transition-all duration-300 border-b border-forest/10">
+        <div class="w-full px-6 md:px-12 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                    <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <div class="relative group">
+                    <a href="index.html" class="flex items-center hover:text-forest transition-colors text-forest border-b-2 border-forest py-2">
+                        Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute top-full left-0 w-48 bg-white dark:bg-ecoDark shadow-xl rounded-2xl p-2 hidden group-hover:block animate-fade-in border border-forest/5">
+                        <a href="index.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 1</a>
+                        <a href="home-niche.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-forest">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-forest transition-colors">About</a>
+                <a href="services.html" class="hover:text-forest transition-colors">Services</a>
+                <a href="shop.html" class="hover:text-forest transition-colors">Shop</a>
+                <a href="blog.html" class="hover:text-forest transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 hover:scale-110">
+                    <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
+                    <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
+                </button>
+                <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
+                    <span>RTL</span>
+                </button>
+                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
+                </a>
+                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+            <div class="space-y-4">
+                <a href="index.html" class="text-lg font-medium">Home 1</a>
+                <a href="home-niche.html" class="text-lg font-bold text-forest">Home 2</a>
+            </div>
+            <a href="about.html" class="text-lg font-medium">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="shop.html" class="text-lg font-medium">Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
+            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
+                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                <span>View Cart (2)</span>
+            </a>
+            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
+                <i data-lucide="languages" class="w-6 h-6"></i>
+                <span>Toggle RTL Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 1. Luxury Living Wall Hero -->
+    <header class="pt-32 pb-20 bg-ecoLight dark:bg-ecoDark">
+        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="text-forest font-bold tracking-widest uppercase text-xs mb-4 block">Bespoke Living Art</span>
+                <h1 class="text-6xl font-outfit font-bold mb-8 leading-tight">Masterpieces That <span class="text-sage">Breathe.</span></h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">Experience the ultimate luxury of a vertical garden. Custom-engineered living wall installations for sophisticated interiors.</p>
+                <div class="flex space-x-4">
+                    <a href="#gallery" class="btn-premium">Explore Gallery</a>
+                    <a href="contact.html" class="px-8 py-3 border border-forest/20 rounded-full hover:bg-forest/5 transition-colors">Start Project</a>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
+                    <img src="home2-hero.png" alt="Living Wall Hero" class="w-full aspect-[4/5] object-cover">
+                </div>
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-sage rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-forest rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Interactive Portfolio Gallery -->
+    <section id="gallery" class="py-24 bg-white dark:bg-[#1a1c1a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-outfit font-bold mb-4">Our Portfolio</h2>
+                <p class="text-gray-500 max-w-md mx-auto">A curation of our recent transformations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="md:col-span-2 group relative overflow-hidden rounded-3xl cursor-pointer" data-aos="fade-up">
+                    <img src="portfolio-1.png" class="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-bold border border-white px-6 py-2 rounded-full">View Case Study</span>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <img src="portfolio-2.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <img src="portfolio-3.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Terrariums and DIY Moss Kit Showcase -->
+    <section class="py-24 bg-ecoLight dark:bg-ecoDark">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm">
+                            <img src="diy_forest_kit.png" class="rounded-2xl mb-4 w-full aspect-square object-cover">
+                            <h4 class="font-bold mb-1">DIY Forest Kit</h4>
+                            <p class="text-sage font-bold">$85.00</p>
+                        </div>
+                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm mt-8">
+                            <img src="zen_sphere.png" class="rounded-2xl mb-4 w-full aspect-square object-cover">
+                            <h4 class="font-bold mb-1">Zen Sphere</h4>
+                            <p class="text-sage font-bold">$120.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2" data-aos="fade-left">
+                    <h2 class="text-4xl font-outfit font-bold mb-8">Bring the Project Home</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">Can't wait for a full installation? Our DIY kits and pre-made botanical art are the perfect way to start your biophilic journey.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center space-x-3"><i data-lucide="package" class="text-forest"></i> <span>Ethically sourced premium moss</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="video" class="text-forest"></i> <span>Step-by-step masterclass included</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="truck" class="text-forest"></i> <span>Eco-friendly plastic-free shipping</span></li>
+                    </ul>
+                    <a href="shop.html" class="btn-premium">Shop The Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Sustainability and Wellness Benefits -->
+    <section class="py-24 bg-forest text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-outfit font-bold mb-8">Why Biophilic Design Matters</h2>
+                <p class="text-white/70 text-lg">More than just decoration, our installations are designed to improve your physical and mental well-being.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="wind" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Air Purification</h3>
+                    <p class="text-white/60">Living walls filter toxins and release fresh oxygen, creating a healthier microclimate.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="brain" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Cognitive Boost</h3>
+                    <p class="text-white/60">Studies show that exposure to greenery reduces stress and increases productivity by 15%.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="volume-2" class="w-10 h-10"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Noise Reduction</h3>
+                    <p class="text-white/60">The porous structure of moss and foliage naturally absorbs high-frequency sounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Maintenance Guide Preview Cards -->
+    <section class="py-24 bg-white dark:bg-ecoDark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-outfit font-bold mb-16 text-center">Nurturing Your Nature</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up">
+                    <img src="hydration-guide.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Hydration 101</h3>
+                        <p class="text-white/70 mb-8">Learn the exact water requirements for different plant species in your wall.</p>
+                        <a href="#" class="text-sage font-bold flex items-center group">Read Guide <i data-lucide="chevron-right" class="ml-2 transition-transform group-hover:translate-x-2"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="light-guide.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Light Balance</h3>
+                        <p class="text-white/70 mb-8">How to position your installations relative to natural and artificial light.</p>
+                        <a href="#" class="text-sage font-bold flex items-center group">Read Guide <i data-lucide="chevron-right" class="ml-2 transition-transform group-hover:translate-x-2"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="step-3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4 text-white">Pruning Tips</h3>
+                        <p class="text-white/70 mb-8">Maintain the shape and health of your living wall with our expert pruning advice.</p>
+                        <a href="#" class="text-sage font-bold flex items-center group">Read Guide <i data-lucide="chevron-right" class="ml-2 transition-transform group-hover:translate-x-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Brand Collaboration CTA Section -->
+    <section class="py-24 bg-ecoLight dark:bg-ecoDark">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-br from-forest to-sage p-16 rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-12" data-aos="zoom-in">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-outfit font-bold mb-6">Collaborate with Verdant</h2>
+                    <p class="text-white/80 text-lg">We partner with luxury brands, high-end hotels, and boutique real estate developers to create unique botanical identities.</p>
+                </div>
+                <div class="flex flex-col space-y-4 w-full md:w-auto">
+                    <a href="contact.html" class="bg-white text-forest px-10 py-4 rounded-full font-bold text-center hover:bg-ecoLight transition-colors">Partner with Us</a>
+                    <p class="text-white/60 text-center text-sm">Join 50+ luxury brand partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index) -->
+    <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
+        <div class="w-full px-6 md:px-16 mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <!-- Brand Info -->
+                <div class="space-y-8" data-aos="fade-up">
+                    <a href="index.html" class="flex items-center space-x-2 group">
+                        <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                            <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-outfit font-bold tracking-tight text-white">VERDANT</span>
+                    </a>
+                    <p class="text-white/60 leading-relaxed max-w-xs">
+                        Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
+                            <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Navigation -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Home</a></li>
+                        <li><a href="about.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> About Us</a></li>
+                        <li><a href="services.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Services</a></li>
+                        <li><a href="shop.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Shop</a></li>
+                        <li><a href="blog.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Blog</a></li>
+                        <li><a href="contact.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Contact Details</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="mail" class="w-5 h-5 text-forest"></i>
+                            <span>hello@verdantwalls.com</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="phone" class="w-5 h-5 text-forest"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-white/60">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-forest"></i>
+                            <span>Copenhagen, Denmark</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Newsletter</h4>
+                    <p class="text-white/60 mb-6 leading-relaxed">Join our inner circle for botanical insights and exclusive eco-luxury offers.</p>
+                    <div class="relative group">
+                        <input type="email" placeholder="Your email address" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-16 outline-none focus:border-forest transition-all text-white">
+                        <button class="absolute right-2 top-2 bottom-2 bg-forest hover:bg-forest/80 px-4 rounded-xl transition-all">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-white/40 text-sm">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <p>&copy; 2026 Verdant Walls Installations. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-forest transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-forest transition-colors text-white/20">|</a>
+                    <a href="#" class="hover:text-forest transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-forest transition-colors text-white/20">|</a>
+                    <a href="#" class="hover:text-forest transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

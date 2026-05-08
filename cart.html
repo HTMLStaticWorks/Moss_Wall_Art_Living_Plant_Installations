@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Verdant Walls</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { forest: '#2D4F1E', sage: '#8FA885', earth: '#D4BDAC', ecoLight: '#F9FBF7', ecoDark: '#121412' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight transition-colors duration-300 font-inter">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[1000] nav-blur transition-all duration-300 border-b border-forest/10">
+        <div class="w-full px-6 md:px-12 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+                    <i data-lucide="leaf" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <div class="relative group">
+                    <button class="flex items-center hover:text-forest transition-colors py-2">
+                        Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-48 bg-white dark:bg-ecoDark shadow-xl rounded-2xl p-2 hidden group-hover:block animate-fade-in border border-forest/5">
+                        <a href="index.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 1</a>
+                        <a href="home-niche.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-forest transition-colors">About</a>
+                <a href="services.html" class="hover:text-forest transition-colors">Services</a>
+                <a href="shop.html" class="hover:text-forest transition-colors">Shop</a>
+                <a href="blog.html" class="hover:text-forest transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 hover:scale-110">
+                    <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
+                    <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
+                </button>
+                <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
+                    <span>RTL</span>
+                </button>
+                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 bg-forest/5 transition-all duration-300 relative scale-110" title="View Cart">
+                    <i data-lucide="shopping-cart" class="text-forest w-6 h-6"></i>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
+                </a>
+                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+            <div class="space-y-4">
+                <a href="index.html" class="text-lg font-medium">Home 1</a>
+                <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
+            </div>
+            <a href="about.html" class="text-lg font-medium">About</a>
+            <a href="services.html" class="text-lg font-medium">Services</a>
+            <a href="shop.html" class="text-lg font-medium">Shop</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
+            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
+            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
+                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                <span>View Cart (2)</span>
+            </a>
+            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
+                <i data-lucide="languages" class="w-6 h-6"></i>
+                <span>Toggle RTL Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-outfit font-bold mb-12" data-aos="fade-right">Your <span class="text-forest">Cart</span></h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2 space-y-6" data-aos="fade-up">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full md:w-32 h-32 rounded-2xl overflow-hidden mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 md:ml-6 text-center md:text-left">
+                            <h3 class="text-xl font-bold mb-1">Scandinavian Moss Hexagon</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm uppercase tracking-wider">Preserved Moss Art</p>
+                            <div class="flex items-center justify-center md:justify-start space-x-4">
+                                <div class="flex items-center border border-forest/10 rounded-full px-4 py-1">
+                                    <button class="hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                                    <span class="mx-4 font-bold">1</span>
+                                    <button class="hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                                </div>
+                                <button class="text-red-400 hover:text-red-600 transition-colors flex items-center space-x-1 text-sm">
+                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                    <span>Remove</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 text-right">
+                            <p class="text-2xl font-bold text-forest">$129.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-full md:w-32 h-32 rounded-2xl overflow-hidden mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 md:ml-6 text-center md:text-left">
+                            <h3 class="text-xl font-bold mb-1">Beginner Moss Kit</h3>
+                            <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm uppercase tracking-wider">DIY Botanical Kits</p>
+                            <div class="flex items-center justify-center md:justify-start space-x-4">
+                                <div class="flex items-center border border-forest/10 rounded-full px-4 py-1">
+                                    <button class="hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                                    <span class="mx-4 font-bold">1</span>
+                                    <button class="hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                                </div>
+                                <button class="text-red-400 hover:text-red-600 transition-colors flex items-center space-x-1 text-sm">
+                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                    <span>Remove</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 text-right">
+                            <p class="text-2xl font-bold text-forest">$45.00</p>
+                        </div>
+                    </div>
+
+                    <a href="shop.html" class="inline-flex items-center space-x-2 text-forest font-bold hover:translate-x-2 transition-transform">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                        <span>Continue Shopping</span>
+                    </a>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1" data-aos="fade-left">
+                    <div class="bg-white dark:bg-ecoDark p-8 rounded-[2.5rem] border border-forest/10 shadow-lg sticky top-32">
+                        <h2 class="text-2xl font-outfit font-bold mb-8">Order Summary</h2>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between text-gray-600 dark:text-gray-400">
+                                <span>Subtotal</span>
+                                <span>$174.00</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600 dark:text-gray-400">
+                                <span>Shipping</span>
+                                <span class="text-forest font-medium">Free</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600 dark:text-gray-400">
+                                <span>Tax</span>
+                                <span>$14.35</span>
+                            </div>
+                            <div class="h-px bg-forest/10 my-4"></div>
+                            <div class="flex justify-between text-xl font-bold">
+                                <span>Total</span>
+                                <span class="text-forest">$188.35</span>
+                            </div>
+                        </div>
+                        <button class="w-full btn-premium py-4 rounded-2xl text-lg mb-4">Checkout Now</button>
+                        <p class="text-center text-sm text-gray-500 dark:text-gray-400">Secure Payment Powered by VerdantPay</p>
+                        
+                        <div class="mt-8 flex items-center justify-center space-x-4 grayscale opacity-50">
+                            <i data-lucide="credit-card" class="w-8 h-8"></i>
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                            <i data-lucide="truck" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        lucide.createIcons();
+    </script>
+    <button id="scroll-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+</body>
+</html>
