@@ -30,18 +30,18 @@
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 font-medium">
+            <div class="hidden xl:flex items-center space-x-8 font-medium">
                 <div class="relative group">
-                    <a href="index.html" class="flex items-center hover:text-forest transition-colors text-forest border-b-2 border-forest py-2">
+                    <a href="index.html" class="flex items-center hover:text-forest transition-colors py-2">
                         Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
                     </a>
                     <div class="absolute top-full left-0 w-48 bg-white dark:bg-ecoDark shadow-xl rounded-2xl p-2 hidden group-hover:block animate-fade-in border border-forest/5">
                         <a href="index.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 1</a>
-                        <a href="home-niche.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-forest">Home 2</a>
+                        <a href="home-niche.html" class="block px-4 py-3 hover:bg-forest/5 rounded-xl transition-colors font-bold text-ecoDark dark:text-ecoLight">Home 2</a>
                     </div>
                 </div>
                 <a href="about.html" class="hover:text-forest transition-colors">About</a>
@@ -59,22 +59,22 @@
                 <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
                     <span>RTL</span>
                 </button>
-                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
+                <a href="cart.html" class="hidden xl:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
                     <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                     <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
                 </a>
-                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
+                <a href="login.html" class="hidden xl:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="xl:hidden p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
             <div class="space-y-4">
                 <a href="index.html" class="text-lg font-medium">Home 1</a>
-                <a href="home-niche.html" class="text-lg font-bold text-forest">Home 2</a>
+                <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
             </div>
             <a href="about.html" class="text-lg font-medium">About</a>
             <a href="services.html" class="text-lg font-medium">Services</a>
@@ -86,17 +86,14 @@
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
-                <i data-lucide="languages" class="w-6 h-6"></i>
-                <span>Toggle RTL Mode</span>
-            </button>
+
         </div>
     </nav>
 
     <!-- 1. Luxury Living Wall Hero -->
     <header class="pt-32 pb-20 bg-ecoLight dark:bg-ecoDark">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div data-aos="fade-right">
+            <div class="order-2 lg:order-1" data-aos="fade-right">
                 <span class="text-forest font-bold tracking-widest uppercase text-xs mb-4 block">Bespoke Living Art</span>
                 <h1 class="text-6xl font-outfit font-bold mb-8 leading-tight">Masterpieces That <span class="text-sage">Breathe.</span></h1>
                 <p class="text-xl text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">Experience the ultimate luxury of a vertical garden. Custom-engineered living wall installations for sophisticated interiors.</p>
@@ -105,7 +102,7 @@
                     <a href="contact.html" class="px-8 py-3 border border-forest/20 rounded-full hover:bg-forest/5 transition-colors">Start Project</a>
                 </div>
             </div>
-            <div class="relative" data-aos="zoom-in">
+            <div class="order-1 lg:order-2 relative" data-aos="zoom-in">
                 <div class="rounded-[2.5rem] overflow-hidden shadow-2xl relative z-10">
                     <img src="home2-hero.png" alt="Living Wall Hero" class="w-full aspect-[4/5] object-cover">
                 </div>
@@ -123,7 +120,7 @@
                 <p class="text-gray-500 max-w-md mx-auto">A curation of our recent transformations.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <div class="md:col-span-2 group relative overflow-hidden rounded-3xl cursor-pointer" data-aos="fade-up">
                     <img src="portfolio-1.png" class="w-full h-full object-cover aspect-video transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -144,21 +141,21 @@
     <section class="py-24 bg-ecoLight dark:bg-ecoDark">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1" data-aos="fade-right">
+                <div class="order-1 lg:order-1" data-aos="fade-right">
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm">
+                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm flex flex-col h-full">
                             <img src="diy_forest_kit.png" class="rounded-2xl mb-4 w-full aspect-square object-cover">
                             <h4 class="font-bold mb-1">DIY Forest Kit</h4>
-                            <p class="text-sage font-bold">$85.00</p>
+                            <p class="text-sage font-bold mt-auto">$85.00</p>
                         </div>
-                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm mt-8">
+                        <div class="bg-white dark:bg-[#1a1c1a] p-6 rounded-[2rem] shadow-sm flex flex-col h-full">
                             <img src="zen_sphere.png" class="rounded-2xl mb-4 w-full aspect-square object-cover">
                             <h4 class="font-bold mb-1">Zen Sphere</h4>
-                            <p class="text-sage font-bold">$120.00</p>
+                            <p class="text-sage font-bold mt-auto">$120.00</p>
                         </div>
                     </div>
                 </div>
-                <div class="order-1 lg:order-2" data-aos="fade-left">
+                <div class="order-2 lg:order-2" data-aos="fade-left">
                     <h2 class="text-4xl font-outfit font-bold mb-8">Bring the Project Home</h2>
                     <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">Can't wait for a full installation? Our DIY kits and pre-made botanical art are the perfect way to start your biophilic journey.</p>
                     <ul class="space-y-4 mb-10">
@@ -179,21 +176,33 @@
                 <h2 class="text-4xl font-outfit font-bold mb-8">Why Biophilic Design Matters</h2>
                 <p class="text-white/70 text-lg">More than just decoration, our installations are designed to improve your physical and mental well-being.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center" data-aos="fade-up">
-                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="wind" class="w-10 h-10"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Air Purification</h3>
-                    <p class="text-white/60">Living walls filter toxins and release fresh oxygen, creating a healthier microclimate.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-2xl" data-aos="fade-up">
+                    <img src="air_purification_bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Air Purification</h3>
+                        <p class="text-white/70">Living walls filter toxins and release fresh oxygen, creating a healthier microclimate.</p>
+                    </div>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="brain" class="w-10 h-10"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Cognitive Boost</h3>
-                    <p class="text-white/60">Studies show that exposure to greenery reduces stress and increases productivity by 15%.</p>
+                <!-- Card 2 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="cognitive_boost_bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Cognitive Boost</h3>
+                        <p class="text-white/70">Studies show that exposure to greenery reduces stress and increases productivity by 15%.</p>
+                    </div>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="volume-2" class="w-10 h-10"></i></div>
-                    <h3 class="text-xl font-bold mb-4">Noise Reduction</h3>
-                    <p class="text-white/60">The porous structure of moss and foliage naturally absorbs high-frequency sounds.</p>
+                <!-- Card 3 -->
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[380px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-2xl md:col-span-2 xl:col-span-1 md:w-1/2 md:mx-auto xl:w-full" data-aos="fade-up" data-aos-delay="200">
+                    <img src="noise_reduction_bg.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">Noise Reduction</h3>
+                        <p class="text-white/70">The porous structure of moss and foliage naturally absorbs high-frequency sounds.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,7 +212,7 @@
     <section class="py-24 bg-white dark:bg-ecoDark">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-outfit font-bold mb-16 text-center">Nurturing Your Nature</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up">
                     <img src="hydration-guide.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -225,7 +234,7 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative group p-10 rounded-[3rem] overflow-hidden min-h-[350px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl md:col-span-2 xl:col-span-1 md:w-1/2 md:mx-auto xl:w-full" data-aos="fade-up" data-aos-delay="200">
                     <img src="step-3.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                     <div class="relative z-10">
@@ -257,14 +266,14 @@
     <!-- Footer (Same as index) -->
     <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
         <div class="w-full px-6 md:px-16 mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <!-- Brand Info -->
                 <div class="space-y-8" data-aos="fade-up">
                     <a href="index.html" class="flex items-center space-x-2 group">
                         <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                             <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl font-outfit font-bold tracking-tight text-white">VERDANT</span>
+                        <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
                     </a>
                     <p class="text-white/60 leading-relaxed max-w-xs">
                         Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.

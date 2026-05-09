@@ -31,11 +31,11 @@
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 font-medium">
+            <div class="hidden xl:flex items-center space-x-8 font-medium">
                 <div class="relative group">
                     <button class="flex items-center hover:text-forest transition-colors py-2">
                         Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
@@ -47,7 +47,7 @@
                 </div>
                 <a href="about.html" class="hover:text-forest transition-colors">About</a>
                 <a href="services.html" class="hover:text-forest transition-colors">Services</a>
-                <a href="shop.html" class="hover:text-forest transition-colors text-forest border-b-2 border-forest">Shop</a>
+                <a href="shop.html" class="hover:text-forest transition-colors">Shop</a>
                 <a href="blog.html" class="hover:text-forest transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
             </div>
@@ -60,26 +60,26 @@
                 <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
                     <span>RTL</span>
                 </button>
-                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
+                <a href="cart.html" class="hidden xl:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
                     <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                     <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
                 </a>
-                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
+                <a href="login.html" class="hidden xl:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="xl:hidden p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
             <div class="space-y-4">
                 <a href="index.html" class="text-lg font-medium">Home 1</a>
                 <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
             </div>
             <a href="about.html" class="text-lg font-medium">About</a>
             <a href="services.html" class="text-lg font-medium">Services</a>
-            <a href="shop.html" class="text-lg font-bold text-forest">Shop</a>
+            <a href="shop.html" class="text-lg font-medium">Shop</a>
             <a href="blog.html" class="text-lg font-medium">Blog</a>
             <a href="contact.html" class="text-lg font-medium">Contact</a>
             <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
@@ -87,10 +87,7 @@
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
-                <i data-lucide="languages" class="w-6 h-6"></i>
-                <span>Toggle RTL Mode</span>
-            </button>
+
         </div>
     </nav>
 
@@ -110,23 +107,23 @@
             <!-- Filters & Search -->
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 space-y-4 md:space-y-0" data-aos="fade-up">
                 <div class="flex items-center space-x-4 overflow-x-auto pb-2 w-full md:w-auto">
-                    <button class="px-6 py-2 bg-forest text-white rounded-full font-bold">All Products</button>
-                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">Moss Art</button>
-                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">DIY Kits</button>
-                    <button class="px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors">Planters</button>
+                    <button class="filter-btn px-6 py-2 bg-forest text-white rounded-full font-bold" data-filter="all">All Products</button>
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors" data-filter="moss-art">Moss Art</button>
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors" data-filter="diy-kits">DIY Kits</button>
+                    <button class="filter-btn px-6 py-2 bg-white dark:bg-ecoDark border border-forest/10 rounded-full hover:border-forest transition-colors" data-filter="planters">Planters</button>
                 </div>
                 <div class="relative w-full md:w-80">
-                    <input type="text" placeholder="Search products..." class="w-full pl-12 pr-6 py-3 bg-white dark:bg-ecoDark rounded-full border border-forest/10 focus:border-forest outline-none transition-all">
+                    <input type="text" id="search-input" placeholder="Search products..." class="w-full pl-12 pr-6 py-3 bg-white dark:bg-ecoDark rounded-full border border-forest/10 focus:border-forest outline-none transition-all">
                     <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5"></i>
                 </div>
             </div>
 
             <!-- Product Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
                 <!-- Product 1 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="moss_hexagon_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center space-x-4">
                             <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-forest scale-0 group-hover:scale-100 transition-transform duration-300 hover:bg-forest hover:text-white" title="Quick View">
                                 <i data-lucide="eye" class="w-5 h-5"></i>
@@ -161,9 +158,9 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="diy-kits" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="beginner_moss_kit.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center space-x-4">
                             <button class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-forest scale-0 group-hover:scale-100 transition-transform duration-300 hover:bg-forest hover:text-white" title="Quick View">
                                 <i data-lucide="eye" class="w-5 h-5"></i>
@@ -194,9 +191,9 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="zen_forest_frame.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -222,9 +219,9 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="diy-kits" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="terrarium_kit.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -254,9 +251,9 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="emerald_circle_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -282,9 +279,9 @@
                 </div>
 
                 <!-- Product 6 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="planters" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="stone_planter.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -310,9 +307,9 @@
                 </div>
 
                 <!-- Product 7 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="planters" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="forest_terrarium.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -338,9 +335,9 @@
                 </div>
 
                 <!-- Product 8 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="vertical_garden_module.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -366,9 +363,9 @@
                 </div>
 
                 <!-- Product 9 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="planters" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="desert_bloom_planter.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -394,9 +391,9 @@
                 </div>
 
                 <!-- Product 10 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="midnight_moss_trio.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -422,9 +419,9 @@
                 </div>
 
                 <!-- Product 11 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="diy-kits" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="smart_plant_light.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -450,9 +447,9 @@
                 </div>
 
                 <!-- Product 12 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="moss_hexagon_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -478,9 +475,9 @@
                 </div>
 
                 <!-- Product 13 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="zen_forest_frame.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -506,9 +503,9 @@
                 </div>
 
                 <!-- Product 14 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="vertical_garden_module.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -534,9 +531,9 @@
                 </div>
 
                 <!-- Product 15 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="hanging_botanical.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -562,9 +559,9 @@
                 </div>
 
                 <!-- Product 16 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="moss_landscape_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -590,9 +587,9 @@
                 </div>
 
                 <!-- Product 17 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="emerald_circle_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -618,9 +615,9 @@
                 </div>
 
                 <!-- Product 18 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="stone_planter.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -646,9 +643,9 @@
                 </div>
 
                 <!-- Product 19 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="diy-kits" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="smart_plant_light.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -674,9 +671,9 @@
                 </div>
 
                 <!-- Product 20 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1596438459194-f275f413d6ff?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="moss_landscape_art.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -702,9 +699,9 @@
                 </div>
 
                 <!-- Product 21 -->
-                <div class="group" data-aos="fade-up">
+                <div class="product-card group" data-category="planters" data-aos="fade-up">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="vertical_garden_module.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -730,9 +727,9 @@
                 </div>
 
                 <!-- Product 22 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                <div class="product-card group" data-category="moss-art" data-aos="fade-up" data-aos-delay="100">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="zen_forest_frame.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -758,9 +755,9 @@
                 </div>
 
                 <!-- Product 23 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-card group" data-category="planters" data-aos="fade-up" data-aos-delay="200">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1592150621344-828ec28ee972?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="zen_sphere.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -786,9 +783,9 @@
                 </div>
 
                 <!-- Product 24 -->
-                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                <div class="product-card group" data-category="planters" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative aspect-square overflow-hidden rounded-[2rem] bg-white dark:bg-ecoDark mb-4 border border-forest/5 shadow-sm group-hover:shadow-xl transition-all duration-500">
-                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="forest_terrarium.png" alt="Product" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <button class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-ecoDark/90 backdrop-blur py-3 rounded-2xl font-bold flex items-center justify-center space-x-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                             <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                             <span>Add to Cart</span>
@@ -819,14 +816,14 @@
     <!-- Footer -->
     <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
         <div class="w-full px-6 md:px-16 mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <!-- Brand Info -->
                 <div class="space-y-8" data-aos="fade-up">
                     <a href="index.html" class="flex items-center space-x-2 group">
                         <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                             <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl font-outfit font-bold tracking-tight text-white">VERDANT</span>
+                        <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
                     </a>
                     <p class="text-white/60 leading-relaxed max-w-xs">
                         Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
@@ -890,9 +887,6 @@
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </button>
                     </div>
-                    <div class="mt-8 flex items-center space-x-4 text-white/40 text-sm">
-                        <i data-lucide="phone" class="w-4 h-4 text-forest"></i>
-                        <span>+1 (555) BOTANIC</span>
                     </div>
                 </div>
             </div>

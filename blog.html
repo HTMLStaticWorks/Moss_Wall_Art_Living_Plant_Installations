@@ -31,11 +31,11 @@
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 font-medium">
+            <div class="hidden xl:flex items-center space-x-8 font-medium">
                 <div class="relative group">
                     <button class="flex items-center hover:text-forest transition-colors py-2">
                         Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
@@ -48,7 +48,7 @@
                 <a href="about.html" class="hover:text-forest transition-colors">About</a>
                 <a href="services.html" class="hover:text-forest transition-colors">Services</a>
                 <a href="shop.html" class="hover:text-forest transition-colors">Shop</a>
-                <a href="blog.html" class="hover:text-forest transition-colors text-forest border-b-2 border-forest">Blog</a>
+                <a href="blog.html" class="hover:text-forest transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
             </div>
 
@@ -60,19 +60,19 @@
                 <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
                     <span>RTL</span>
                 </button>
-                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
+                <a href="cart.html" class="hidden xl:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
                     <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                     <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
                 </a>
-                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
+                <a href="login.html" class="hidden xl:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="xl:hidden p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
             <div class="space-y-4">
                 <a href="index.html" class="text-lg font-medium">Home 1</a>
                 <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
@@ -80,17 +80,14 @@
             <a href="about.html" class="text-lg font-medium">About</a>
             <a href="services.html" class="text-lg font-medium">Services</a>
             <a href="shop.html" class="text-lg font-medium">Shop</a>
-            <a href="blog.html" class="text-lg font-bold text-forest">Blog</a>
+            <a href="blog.html" class="text-lg font-medium">Blog</a>
             <a href="contact.html" class="text-lg font-medium">Contact</a>
             <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
             <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
-                <i data-lucide="languages" class="w-6 h-6"></i>
-                <span>Toggle RTL Mode</span>
-            </button>
+
         </div>
     </nav>
 
@@ -110,9 +107,9 @@
                 <div class="lg:w-2/3 space-y-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <!-- Post 1 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="moss_landscape_art.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -129,9 +126,9 @@
                         </article>
 
                         <!-- Post 2 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="beginner_moss_kit.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -148,9 +145,9 @@
                         </article>
 
                         <!-- Post 3 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1544833058-e70f9ca25c17?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="moss_hexagon_art.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -167,9 +164,9 @@
                         </article>
 
                         <!-- Post 4 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="smart_plant_light.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -186,9 +183,9 @@
                         </article>
 
                         <!-- Post 5 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1545239351-ef35f43d514b?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="zen_forest_frame.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -205,9 +202,9 @@
                         </article>
 
                         <!-- Post 6 -->
-                        <article class="group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
                             <div class="aspect-video overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <img src="vertical_garden_module.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                             </div>
                             <div class="p-8">
                                 <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
@@ -222,15 +219,53 @@
                                 </a>
                             </div>
                         </article>
+
+                        <!-- Post 7 -->
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="moss_hexagon_art.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
+                                    <span>Art</span>
+                                    <span class="w-1 h-1 bg-forest rounded-full"></span>
+                                    <span>6 min read</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-forest transition-colors">The Art of Living Walls</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-8">Mastering the balance between aesthetic beauty and botanical health in vertical design.</p>
+                                <a href="#" class="flex items-center font-bold text-forest group/link">
+                                    Read Story <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-2"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Post 8 -->
+                        <article class="blog-post group bg-white dark:bg-ecoDark rounded-[2.5rem] overflow-hidden border border-forest/5 shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                            <div class="aspect-video overflow-hidden">
+                                <img src="vertical_garden_module.png" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            </div>
+                            <div class="p-8">
+                                <div class="flex items-center space-x-4 mb-4 text-sm text-sage font-bold uppercase tracking-widest">
+                                    <span>Business</span>
+                                    <span class="w-1 h-1 bg-forest rounded-full"></span>
+                                    <span>4 min read</span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 group-hover:text-forest transition-colors">Eco-Friendly Office Solutions</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-8">Implementing sustainable greenery in corporate environments to boost morale and air quality.</p>
+                                <a href="#" class="flex items-center font-bold text-forest group/link">
+                                    Read Story <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover/link:translate-x-2"></i>
+                                </a>
+                            </div>
+                        </article>
                     </div>
 
                     <!-- Pagination -->
-                    <div class="flex items-center justify-center space-x-4 pt-12">
-                        <button class="w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                        <button class="w-12 h-12 rounded-full bg-forest text-white font-bold">1</button>
-                        <button class="w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center hover:border-forest transition-all">2</button>
-                        <button class="w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center hover:border-forest transition-all">3</button>
-                        <button class="w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                    <div class="flex items-center justify-center space-x-4 pt-12" id="blog-pagination">
+                        <button class="page-prev w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                        <button class="page-btn w-12 h-12 rounded-full bg-forest text-white font-bold active" data-page="1">1</button>
+                        <button class="page-btn w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center hover:border-forest transition-all" data-page="2">2</button>
+                        <button class="page-btn w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center hover:border-forest transition-all" data-page="3">3</button>
+                        <button class="page-next w-12 h-12 rounded-full border border-forest/10 flex items-center justify-center text-forest hover:bg-forest hover:text-white transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
                     </div>
                 </div>
 
@@ -265,13 +300,13 @@
                         <div class="space-y-6">
                             <a href="#" class="flex items-center space-x-4 group">
                                 <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                    <img src="moss_hexagon_art.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
                                 </div>
                                 <h5 class="font-bold text-sm leading-tight group-hover:text-forest transition-colors">Moss Wall vs. Living Wall: Which is right?</h5>
                             </a>
                             <a href="#" class="flex items-center space-x-4 group">
                                 <div class="w-20 h-20 rounded-2xl overflow-hidden flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=200" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                                    <img src="beginner_moss_kit.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
                                 </div>
                                 <h5 class="font-bold text-sm leading-tight group-hover:text-forest transition-colors">5 Low-Light Plants for Modern Offices</h5>
                             </a>
@@ -296,14 +331,14 @@
     <!-- Footer -->
     <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
         <div class="w-full px-6 md:px-16 mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <!-- Brand Info -->
-                <div class="space-y-8" data-aos="fade-up">
+                <div class="space-y-8">
                     <a href="index.html" class="flex items-center space-x-2 group">
                         <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                             <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                         </div>
-                        <span class="text-2xl font-outfit font-bold tracking-tight text-white">VERDANT</span>
+                        <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
                     </a>
                     <p class="text-white/60 leading-relaxed max-w-xs">
                         Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
@@ -326,7 +361,7 @@
                 </div>
 
                 <!-- Navigation -->
-                <div data-aos="fade-up" data-aos-delay="100">
+                <div>
                     <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Company</h4>
                     <ul class="space-y-4">
                         <li><a href="index.html" class="text-white/60 hover:text-white transition-colors flex items-center group"><i data-lucide="chevron-right" class="w-4 h-4 mr-2 text-forest opacity-0 group-hover:opacity-100 transition-all"></i> Home</a></li>
@@ -339,7 +374,7 @@
                 </div>
 
                 <!-- Contact Details -->
-                <div data-aos="fade-up" data-aos-delay="200">
+                <div>
                     <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Contact Details</h4>
                     <ul class="space-y-4">
                         <li class="flex items-center space-x-3 text-white/60">
@@ -358,7 +393,7 @@
                 </div>
 
                 <!-- Newsletter -->
-                <div data-aos="fade-up" data-aos-delay="300">
+                <div>
                     <h4 class="text-lg font-outfit font-bold mb-8 text-sage">Newsletter</h4>
                     <p class="text-white/60 mb-6 leading-relaxed">Join our inner circle for botanical insights and exclusive eco-luxury offers.</p>
                     <div class="relative group">

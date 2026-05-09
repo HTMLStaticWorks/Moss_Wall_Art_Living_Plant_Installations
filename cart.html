@@ -30,10 +30,10 @@
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
                 </div>
-                <span class="text-2xl font-outfit font-bold tracking-tight text-forest dark:text-sage">VERDANT</span>
+                <span class="text-2xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
             </a>
             
-            <div class="hidden md:flex items-center space-x-8 font-medium">
+            <div class="hidden xl:flex items-center space-x-8 font-medium">
                 <div class="relative group">
                     <button class="flex items-center hover:text-forest transition-colors py-2">
                         Home <i data-lucide="chevron-down" class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180"></i>
@@ -55,22 +55,22 @@
                     <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
                     <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
                 </button>
-                <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] md:text-sm hover:scale-105" title="Toggle RTL/LTR">
+                <button id="rtl-toggle" class="rtl-toggle-btn flex items-center justify-center w-10 h-10 xl:w-auto xl:h-auto xl:px-4 xl:py-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 font-bold text-[10px] xl:text-sm hover:scale-105" title="Toggle RTL/LTR">
                     <span>RTL</span>
                 </button>
-                <a href="cart.html" class="hidden md:flex p-2 rounded-full border border-forest/10 bg-forest/5 transition-all duration-300 relative scale-110" title="View Cart">
+                <a href="cart.html" class="hidden xl:flex p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 relative hover:scale-110" title="View Cart">
                     <i data-lucide="shopping-cart" class="text-forest w-6 h-6"></i>
                     <span class="absolute -top-1 -right-1 w-4 h-4 bg-forest text-white text-[10px] flex items-center justify-center rounded-full border border-white dark:border-ecoDark">2</span>
                 </a>
-                <a href="login.html" class="hidden md:block btn-premium px-6 py-2 text-sm">Login</a>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
+                <a href="login.html" class="hidden xl:block btn-premium px-6 py-2 text-sm">Login</a>
+                <button id="mobile-menu-btn" class="xl:hidden p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
             <div class="space-y-4">
                 <a href="index.html" class="text-lg font-medium">Home 1</a>
                 <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
@@ -85,10 +85,7 @@
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-            <button class="rtl-toggle-btn flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full font-bold">
-                <i data-lucide="languages" class="w-6 h-6"></i>
-                <span>Toggle RTL Mode</span>
-            </button>
+
         </div>
     </nav>
 
@@ -100,18 +97,18 @@
                 <!-- Cart Items -->
                 <div class="lg:col-span-2 space-y-6" data-aos="fade-up">
                     <!-- Item 1 -->
-                    <div class="flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="cart-item flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
                         <div class="w-full md:w-32 h-32 rounded-2xl overflow-hidden mb-4 md:mb-0">
-                            <img src="https://images.unsplash.com/photo-1581578017093-cd305ec63300?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-full object-cover">
+                                <img src="moss_hexagon_art.png" alt="Product" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 md:ml-6 text-center md:text-left">
                             <h3 class="text-xl font-bold mb-1">Scandinavian Moss Hexagon</h3>
                             <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm uppercase tracking-wider">Preserved Moss Art</p>
                             <div class="flex items-center justify-center md:justify-start space-x-4">
                                 <div class="flex items-center border border-forest/10 rounded-full px-4 py-1">
-                                    <button class="hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
-                                    <span class="mx-4 font-bold">1</span>
-                                    <button class="hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                                    <button class="qty-minus hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                                    <span class="qty-val mx-4 font-bold">1</span>
+                                    <button class="qty-plus hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
                                 </div>
                                 <button class="text-red-400 hover:text-red-600 transition-colors flex items-center space-x-1 text-sm">
                                     <i data-lucide="trash-2" class="w-4 h-4"></i>
@@ -125,18 +122,18 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="cart-item flex flex-col md:flex-row items-center p-6 bg-white dark:bg-ecoDark rounded-3xl border border-forest/5 shadow-sm hover:shadow-md transition-shadow">
                         <div class="w-full md:w-32 h-32 rounded-2xl overflow-hidden mb-4 md:mb-0">
-                            <img src="https://images.unsplash.com/photo-1592150621744-af643a12e5a6?auto=format&fit=crop&q=80&w=400" alt="Product" class="w-full h-full object-cover">
+                                <img src="beginner_moss_kit.png" alt="Product" class="w-full h-full object-cover">
                         </div>
                         <div class="flex-1 md:ml-6 text-center md:text-left">
                             <h3 class="text-xl font-bold mb-1">Beginner Moss Kit</h3>
                             <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm uppercase tracking-wider">DIY Botanical Kits</p>
                             <div class="flex items-center justify-center md:justify-start space-x-4">
                                 <div class="flex items-center border border-forest/10 rounded-full px-4 py-1">
-                                    <button class="hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
-                                    <span class="mx-4 font-bold">1</span>
-                                    <button class="hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
+                                    <button class="qty-minus hover:text-forest transition-colors"><i data-lucide="minus" class="w-4 h-4"></i></button>
+                                    <span class="qty-val mx-4 font-bold">1</span>
+                                    <button class="qty-plus hover:text-forest transition-colors"><i data-lucide="plus" class="w-4 h-4"></i></button>
                                 </div>
                                 <button class="text-red-400 hover:text-red-600 transition-colors flex items-center space-x-1 text-sm">
                                     <i data-lucide="trash-2" class="w-4 h-4"></i>

@@ -22,6 +22,9 @@ body {
     background-color: var(--eco-light);
     color: var(--eco-dark);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -54,6 +57,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -161,4 +166,13 @@ html {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(45, 79, 30, 0.4);
     background-color: #3d6b2a;
+}
+
+/* Product Filtering Transitions */
+.product-card {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post {
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
