@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Bespoke Botanical Installations</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,13 +19,13 @@
     </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-[1000] nav-blur transition-all duration-300 border-b border-forest/10">
-        <div class="w-full px-6 md:px-12 py-4 flex justify-between items-center">
+        <div class="w-full px-4 md:px-12 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2 group">
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
@@ -51,7 +51,7 @@
                 <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
             </div>
 
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2 md:space-x-4">
                 <button id="theme-toggle" class="p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 hover:scale-110">
                     <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
                     <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
@@ -70,29 +70,28 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
-            <div class="flex flex-col space-y-4">
-                <a href="index.html" class="text-lg font-medium">Home 1</a>
-                <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
+                <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col items-center text-center p-6 space-y-4 animate-fade-in">
+            <div class="flex flex-col space-y-4 w-full items-center text-center">
+                <a href="index.html" class="text-lg font-medium text-center w-full block py-2">Home 1</a>
+                <a href="home-niche.html" class="text-lg font-medium text-center w-full block py-2">Home 2</a>
             </div>
-            <a href="about.html" class="text-lg font-medium">About</a>
-            <a href="services.html" class="text-lg font-medium">Services</a>
-            <a href="shop.html" class="text-lg font-medium">Shop</a>
-            <a href="blog.html" class="text-lg font-medium">Blog</a>
-            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <a href="about.html" class="text-lg font-medium text-center w-full block py-2">About</a>
+            <a href="services.html" class="text-lg font-medium text-center w-full block py-2">Services</a>
+            <a href="shop.html" class="text-lg font-medium text-center w-full block py-2">Shop</a>
+            <a href="blog.html" class="text-lg font-medium text-center w-full block py-2">Blog</a>
+            <a href="contact.html" class="text-lg font-medium text-center w-full block py-2">Contact</a>
             <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
-            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
+            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full">
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-
         </div>
     </nav>
 
     <!-- 1. Service Categories Grid -->
     <section class="pt-40 pb-24 bg-white dark:bg-ecoDark">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="max-w-3xl mb-16" data-aos="fade-up">
                 <h1 class="text-4xl md:text-6xl font-outfit font-bold mb-8">Our Botanical <span class="text-sage">Expertise.</span></h1>
                 <p class="text-xl text-gray-500 leading-relaxed">From minimalist preserved moss panels to complex, oxygen-generating living systems, we offer a full spectrum of biophilic design services.</p>
@@ -101,7 +100,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 <!-- Service 1 -->
                 <div class="relative group p-10 rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up">
-                    <img src="portfolio-1.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/images/portfolio-1.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-4 text-white">Preserved Moss Walls</h3>
@@ -111,7 +110,7 @@
                 </div>
                 <!-- Service 2 -->
                 <div class="relative group p-10 rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <img src="home2-hero.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/images/home2-hero.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-4 text-white">Active Living Walls</h3>
@@ -121,7 +120,7 @@
                 </div>
                 <!-- Service 3 -->
                 <div class="relative group p-10 rounded-[2.5rem] overflow-hidden min-h-[400px] flex flex-col justify-end transition-all hover:scale-[1.02] duration-500 shadow-xl md:col-span-2 xl:col-span-1 md:w-1/2 md:mx-auto xl:w-full" data-aos="fade-up" data-aos-delay="200">
-                    <img src="diy_forest_kit.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/images/diy_forest_kit.png" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-4 text-white">DIY Botanical Kits</h3>
@@ -135,7 +134,7 @@
 
     <!-- 2. Residential and Commercial Installation Types -->
     <section class="py-24 bg-ecoLight dark:bg-ecoDark">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="relative" data-aos="fade-right">
                     <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200" class="rounded-[3rem] shadow-2xl">
@@ -147,11 +146,11 @@
                         Transform your home into a sanctuary. Our residential installations are tailored to reflect your personal style, from minimal bedroom accents to dramatic living room focal points.
                     </p>
                     <div class="space-y-6">
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 md:space-x-4">
                             <div class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center text-forest dark:text-sage"><i data-lucide="home"></i></div>
                             <span class="text-lg font-medium">Bespoke living room masterpieces</span>
                         </div>
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 md:space-x-4">
                             <div class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center text-forest dark:text-sage"><i data-lucide="bed"></i></div>
                             <span class="text-lg font-medium">Calming bedroom installations</span>
                         </div>
@@ -166,11 +165,11 @@
                         Boost branding and well-being in the corporate world. We specialize in large-scale installations for hotel lobbies, office rotundas, and luxury retail storefronts.
                     </p>
                     <div class="space-y-6">
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 md:space-x-4">
                             <div class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center text-forest dark:text-sage"><i data-lucide="briefcase"></i></div>
                             <span class="text-lg font-medium">Branded moss logos & reception walls</span>
                         </div>
-                        <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2 md:space-x-4">
                             <div class="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center text-forest dark:text-sage"><i data-lucide="users"></i></div>
                             <span class="text-lg font-medium">Acoustic solutions for workspaces</span>
                         </div>
@@ -185,7 +184,7 @@
 
     <!-- 3. Moss Wall Maintenance Services -->
     <section class="py-24 bg-forest text-white">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="max-w-4xl mx-auto text-center mb-16">
                 <h2 class="text-4xl font-outfit font-bold mb-8">Lifetime Support</h2>
                 <p class="text-white/70 text-lg">We don't just install and leave. Our dedicated maintenance team ensures your investment continues to thrive for decades.</p>
@@ -231,7 +230,7 @@
     </section>
 
     <footer class="bg-ecoDark text-white pt-24 pb-12 border-t border-white/5">
-        <div class="w-full px-6 md:px-16 mx-auto">
+        <div class="w-full px-6 md:px-12 mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <!-- Brand Info -->
                 <div class="space-y-8" data-aos="fade-up">
@@ -244,7 +243,7 @@
                     <p class="text-white/60 leading-relaxed max-w-xs">
                         Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 md:space-x-4">
                         <a href="#" class="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
                             <svg class="w-5 h-5 text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
@@ -324,7 +323,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
     <button id="scroll-top" title="Back to Top">
         <i data-lucide="chevron-up"></i>

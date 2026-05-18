@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verdant Walls | Luxury Moss Art & Living Plant Installations</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta name="description" content="Premium preserved moss wall art and luxury living plant installations for residential and commercial spaces. Scandinavian eco-luxury design.">
     
     <!-- Tailwind CSS -->
@@ -35,7 +35,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight transition-colors duration-300">
 
@@ -46,7 +46,7 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-[1000] nav-blur transition-all duration-300 border-b border-forest/10">
-        <div class="w-full px-6 md:px-12 py-4 flex justify-between items-center">
+        <div class="w-full px-4 md:px-12 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2 group">
                 <div class="w-10 h-10 bg-forest rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
                     <i data-lucide="leaf" class="text-white w-6 h-6"></i>
@@ -72,7 +72,7 @@
                 <a href="contact.html" class="hover:text-forest transition-colors">Contact</a>
             </div>
 
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2 md:space-x-4">
                 <button id="theme-toggle" class="p-2 rounded-full border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-all duration-300 hover:scale-110">
                     <i data-lucide="moon" class="w-6 h-6 dark:hidden"></i>
                     <i data-lucide="sun" class="w-6 h-6 hidden dark:block"></i>
@@ -91,30 +91,29 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col p-6 space-y-4 animate-fade-in">
-            <div class="flex flex-col space-y-4">
-                <a href="index.html" class="text-lg font-medium">Home 1</a>
-                <a href="home-niche.html" class="text-lg font-medium">Home 2</a>
+                <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden absolute top-full left-0 w-full bg-ecoLight dark:bg-ecoDark border-t border-forest/10 flex-col items-center text-center p-6 space-y-4 animate-fade-in">
+            <div class="flex flex-col space-y-4 w-full items-center text-center">
+                <a href="index.html" class="text-lg font-medium text-center w-full block py-2">Home 1</a>
+                <a href="home-niche.html" class="text-lg font-medium text-center w-full block py-2">Home 2</a>
             </div>
-            <a href="about.html" class="text-lg font-medium">About</a>
-            <a href="services.html" class="text-lg font-medium">Services</a>
-            <a href="shop.html" class="text-lg font-medium">Shop</a>
-            <a href="blog.html" class="text-lg font-medium">Blog</a>
-            <a href="contact.html" class="text-lg font-medium">Contact</a>
+            <a href="about.html" class="text-lg font-medium text-center w-full block py-2">About</a>
+            <a href="services.html" class="text-lg font-medium text-center w-full block py-2">Services</a>
+            <a href="shop.html" class="text-lg font-medium text-center w-full block py-2">Shop</a>
+            <a href="blog.html" class="text-lg font-medium text-center w-full block py-2">Blog</a>
+            <a href="contact.html" class="text-lg font-medium text-center w-full block py-2">Contact</a>
             <a href="login.html" class="btn-premium w-full text-center py-3">Login</a>
-            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full">
+            <a href="cart.html" class="flex items-center justify-center space-x-2 py-3 border border-forest/10 rounded-full w-full">
                 <i data-lucide="shopping-cart" class="w-6 h-6"></i>
                 <span>View Cart (2)</span>
             </a>
-
         </div>
     </nav>
 
     <!-- 1. Hero Section -->
-    <header class="relative min-h-screen md:h-screen flex items-center pt-32 md:pt-0 overflow-hidden">
+    <header class="relative min-h-[85vh] flex items-center pt-40 md:pt-48 pb-24 overflow-visible">
         <div class="absolute inset-0 z-0">
-            <img src="./hero-bg.png" alt="Luxury Moss Wall" class="w-full h-full object-cover">
+            <img src="assets/images/hero-bg.png" alt="Luxury Moss Wall" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
         </div>
         
@@ -127,8 +126,8 @@
                 <p class="text-xl text-white/80 mb-10 leading-relaxed font-light">
                     Transforming modern architecture with sustainable, preserved moss wall art and artisan living botanical designs. Zero maintenance, infinite beauty.
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="services.html" class="btn-premium py-4 px-10 text-lg">View Our Work</a>
+                <div class="flex flex-wrap gap-4 sm:gap-6 items-center">
+                    <a href="services.html" class="btn-premium py-4 px-10 text-lg text-center">View Our Work</a>
                     <a href="contact.html" class="glass px-10 py-4 rounded-full text-white font-medium border-white/20 hover:bg-white/10 transition-all text-lg text-center">Reach us</a>
                 </div>
             </div>
@@ -141,7 +140,7 @@
 
     <!-- 2. Featured Categories -->
     <section class="py-24 bg-white dark:bg-[#1a1c1a]">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-4">Artisanal Botanicals</h2>
                 <div class="w-20 h-1 bg-forest mx-auto mb-6"></div>
@@ -151,7 +150,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                 <!-- Category 1 -->
                 <div class="group relative overflow-hidden rounded-3xl h-[500px]" data-aos="fade-up" data-aos-delay="100">
-                    <img src="./preserved-moss.png" alt="Preserved Moss Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/images/preserved-moss.png" alt="Preserved Moss Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end">
                         <h3 class="text-2xl font-bold text-white mb-2">Preserved Moss Art</h3>
                         <p class="text-white/70 mb-6">100% real moss, stabilized to last for years without water or sunlight.</p>
@@ -186,48 +185,68 @@
         </div>
     </section>
 
-    <!-- 3. Commercial Installations Showcase -->
-    <section class="py-24 bg-ecoLight dark:bg-ecoDark overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2" data-aos="fade-right">
-                    <span class="text-forest dark:text-sage font-bold tracking-widest uppercase text-sm mb-4 block">Corporate Wellness</span>
-                    <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-8 leading-tight">Elevate Your Commercial Workspace</h2>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-10 leading-relaxed">
-                        We collaborate with architects and interior designers to integrate biophilic design into offices, hotels, and luxury retail spaces. Enhance employee productivity and brand identity with nature.
-                    </p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-start space-x-3">
-                            <i data-lucide="check-circle" class="text-forest dark:text-sage w-6 h-6 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold">Acoustic Benefits</h4>
-                                <p class="text-gray-500">Natural sound absorption for open-plan offices.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i data-lucide="check-circle" class="text-forest dark:text-sage w-6 h-6 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold">Zero Maintenance</h4>
-                                <p class="text-gray-500">Preserved moss requires no lighting or water.</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn-premium inline-block">Consult For Business</a>
-                </div>
-                <div class="lg:w-1/2 relative" data-aos="fade-left">
-                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200" alt="Office Moss Installation" class="w-full h-full object-cover">
+    <!-- 3. Commercial Installations Showcase & Corporate Wellness -->
+    <section class="py-24 bg-ecoLight dark:bg-ecoDark overflow-hidden border-y border-forest/5">
+        <div class="container mx-auto px-6 md:px-12">
+            <!-- Center-aligned Header Content -->
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <span class="text-forest dark:text-sage font-bold tracking-widest uppercase text-sm mb-4 block">Corporate Wellness</span>
+                <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-6 leading-tight">Elevate Your Commercial Workspace</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                    We collaborate with architects and interior designers to integrate biophilic design into offices, hotels, and luxury retail spaces. Discover the visual and health benefits of adding preserved moss art to your corporate environment.
+                </p>
+            </div>
+
+            <!-- Balanced 3-Column Wellness Benefits Grid using local visuals -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mb-16">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-[2.5rem] h-[420px] flex flex-col justify-end shadow-xl transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/noise_reduction_bg.png" alt="Acoustic Dampening" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+                    <div class="relative z-20 p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-3">Acoustic Dampening</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Porous, multi-layered moss structures naturally absorb ambient echoes and high-frequency noise, making them ideal for busy, open-plan workspaces.
+                        </p>
                     </div>
-                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-sage/20 rounded-full blur-3xl -z-10"></div>
-                    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-forest/10 rounded-full blur-3xl -z-10"></div>
                 </div>
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-[2.5rem] h-[420px] flex flex-col justify-end shadow-xl transition-all duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/air_purification_bg.png" alt="Air Purification" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+                    <div class="relative z-20 p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-3">Air Purification</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Stabilized moss filters airborne toxins, naturally regulates indoor humidity levels, and controls ambient dust particles for a healthier microclimate.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-[2.5rem] h-[420px] flex flex-col justify-end shadow-xl transition-all duration-500 hover:scale-[1.02] md:col-span-2 xl:col-span-1 md:w-1/2 md:mx-auto xl:w-full" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/images/cognitive_boost_bg.png" alt="Cognitive Boost" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+                    <div class="relative z-20 p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-3">Cognitive & Mood Boost</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            Exposure to real biophilic elements reduces workplace anxiety, elevates mood, and has been proven to increase overall productivity by 15%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centered Call to Action -->
+            <div class="text-center" data-aos="fade-up">
+                <a href="contact.html" class="btn-premium inline-flex items-center space-x-2 py-4 px-10 text-lg shadow-lg hover:shadow-xl">
+                    <span>Consult For Business</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- 4. Process Timeline -->
     <section class="py-24 bg-white dark:bg-[#1a1c1a]">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-4">How We Work</h2>
                 <div class="w-20 h-1 bg-forest mx-auto"></div>
@@ -240,7 +259,7 @@
                 <!-- Step 1 -->
                 <div class="relative group overflow-hidden p-8 rounded-3xl shadow-sm border border-forest/5" data-aos="zoom-in" data-aos-delay="100">
                     <div class="absolute inset-0 z-0">
-                        <img src="step-1.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/step-1.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
                     </div>
                     <div class="relative z-10">
@@ -252,7 +271,7 @@
                 <!-- Step 2 -->
                 <div class="relative group overflow-hidden p-8 rounded-3xl shadow-sm border border-forest/5" data-aos="zoom-in" data-aos-delay="200">
                     <div class="absolute inset-0 z-0">
-                        <img src="step-2.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/step-2.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
                     </div>
                     <div class="relative z-10">
@@ -264,7 +283,7 @@
                 <!-- Step 3 -->
                 <div class="relative group overflow-hidden p-8 rounded-3xl shadow-sm border border-forest/5" data-aos="zoom-in" data-aos-delay="300">
                     <div class="absolute inset-0 z-0">
-                        <img src="step-3.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/step-3.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
                     </div>
                     <div class="relative z-10">
@@ -276,7 +295,7 @@
                 <!-- Step 4 -->
                 <div class="relative group overflow-hidden p-8 rounded-3xl shadow-sm border border-forest/5" data-aos="zoom-in" data-aos-delay="400">
                     <div class="absolute inset-0 z-0">
-                        <img src="step-4.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/step-4.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors"></div>
                     </div>
                     <div class="relative z-10">
@@ -291,7 +310,7 @@
 
     <!-- 5. Testimonials -->
     <section class="py-24 bg-forest text-white overflow-hidden">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-4">What Our Clients Say</h2>
                 <div class="w-20 h-1 bg-sage mx-auto"></div>
@@ -361,7 +380,7 @@
 
     <!-- 6. Contact CTA Banner -->
     <section class="py-24 bg-white dark:bg-ecoDark">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 md:px-12">
             <div class="bg-ecoLight dark:bg-[#1a1c1a] rounded-[3rem] p-12 md:p-20 shadow-xl border border-forest/5 flex flex-col lg:flex-row items-center gap-16" data-aos="zoom-in">
                 <div class="lg:w-1/2">
                     <h2 class="text-4xl md:text-5xl font-outfit font-bold mb-6">Ready to transform your space?</h2>
@@ -393,7 +412,7 @@
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-ecoDark text-ecoDark dark:text-white pt-24 pb-12 border-t border-forest/10 dark:border-white/5">
-        <div class="w-full px-6 md:px-16 mx-auto">
+        <div class="w-full px-6 md:px-12 mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 mb-20">
                 <!-- Brand Info -->
                 <div class="space-y-8" data-aos="fade-up">
@@ -406,7 +425,7 @@
                     <p class="text-gray-600 dark:text-white/60 leading-relaxed max-w-xs">
                         Crafting sustainable botanical experiences that bridge the gap between architecture and nature. Eco-luxury design for modern living.
                     </p>
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 md:space-x-4">
                         <a href="#" class="w-10 h-10 bg-forest/5 dark:bg-white/5 border border-forest/10 dark:border-white/10 rounded-xl flex items-center justify-center hover:bg-forest hover:border-forest transition-all duration-300 group">
                             <svg class="w-5 h-5 text-forest/60 dark:text-white/60 group-hover:text-white transition-colors" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
@@ -491,7 +510,7 @@
     </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="assets/js/main.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();

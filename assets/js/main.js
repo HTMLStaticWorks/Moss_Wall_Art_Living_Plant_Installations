@@ -64,9 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Floating Leaf Particles
-    createLeafParticles();
-
     // Scroll Progress Bar
     window.onscroll = function() { 
         updateScrollProgress();
@@ -175,33 +172,6 @@ function handleScrollTop() {
     }
 }
 
-function createLeafParticles() {
-    const container = document.body;
-    const leafCount = 15;
-    const icons = ['🌿', '🍃', '🌱'];
-
-    for (let i = 0; i < leafCount; i++) {
-        const leaf = document.createElement('div');
-        leaf.className = 'leaf-particle';
-        leaf.innerHTML = icons[Math.floor(Math.random() * icons.length)];
-        
-        // Randomize start position
-        leaf.style.left = Math.random() * 95 + 'vw';
-        leaf.style.bottom = '-50px';
-        
-        // Randomize speed and delay
-        const duration = 10 + Math.random() * 20;
-        const delay = Math.random() * 20;
-        leaf.style.animationDuration = duration + 's';
-        leaf.style.animationDelay = delay + 's';
-        
-        // Randomize size
-        leaf.style.fontSize = (10 + Math.random() * 20) + 'px';
-        leaf.style.opacity = (0.2 + Math.random() * 0.4).toString();
-
-        container.appendChild(leaf);
-    }
-}
 
 function updateScrollProgress() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
