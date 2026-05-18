@@ -21,10 +21,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight min-h-screen flex items-center justify-center p-6 relative">
+<body class="bg-ecoLight text-ecoDark dark:bg-ecoDark dark:text-ecoLight min-h-screen flex flex-col items-center justify-start md:justify-center p-4 sm:p-6 pt-24 md:pt-6 relative">
 
     <!-- Accessibility Controls -->
-    <div class="fixed bottom-4 left-4 md:top-8 md:right-8 md:bottom-auto md:left-auto flex items-center space-x-2 md:space-x-4 z-[100]">
+    <div class="fixed top-4 right-4 md:top-8 md:right-8 flex items-center space-x-2 md:space-x-4 z-[100]">
         <button id="rtl-toggle" class="rtl-toggle-btn bg-white dark:bg-white/10 border border-forest/10 rounded-xl hover:bg-forest hover:text-white transition-all duration-300 shadow-xl active:scale-95 flex items-center justify-center w-10 h-10 md:w-[50px] md:h-[50px]" title="Toggle RTL">
             <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest pointer-events-none">RTL</span>
         </button>
@@ -45,7 +45,7 @@
                 <span class="text-3xl font-outfit font-bold tracking-tight text-sage">VERDANT</span>
             </a>
         </div>
-            <div id="auth-container" class="bg-white dark:bg-ecoDark p-8 md:p-12 rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(45,79,30,0.15)] border border-forest/5 space-y-8">
+            <div id="auth-container" class="bg-white dark:bg-ecoDark p-5 sm:p-8 md:p-12 rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(45,79,30,0.15)] border border-forest/5 space-y-8">
                 <!-- Header -->
                 <div class="text-center">
                     <h2 id="auth-title" class="text-4xl font-outfit font-bold mb-2">Login</h2>
@@ -70,12 +70,12 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
-                                <input type="checkbox" id="remember" class="w-4 h-4 rounded border-forest/10 text-forest focus:ring-forest">
-                                <label for="remember" class="text-sm text-gray-500">Remember for 30 days</label>
+                        <div class="flex items-center justify-between gap-2 w-full">
+                            <div class="flex items-center space-x-1.5 min-w-0">
+                                <input type="checkbox" id="remember" class="w-4 h-4 rounded border-forest/10 text-forest focus:ring-forest shrink-0">
+                                <label for="remember" class="text-xs sm:text-sm text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">Remember for 30 days</label>
                             </div>
-                            <a href="#" class="text-xs font-bold text-forest hover:underline">Forgot password?</a>
+                            <a href="#" class="text-[11px] sm:text-xs font-bold text-forest hover:underline whitespace-nowrap shrink-0">Forgot password?</a>
                         </div>
                         <button type="submit" class="btn-premium w-full py-4 text-lg">Sign In</button>
                         

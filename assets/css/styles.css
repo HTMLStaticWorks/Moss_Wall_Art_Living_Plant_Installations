@@ -8,6 +8,15 @@
     --eco-dark: #121412;
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
+    
+    /* Premium Button Hover Design Tokens */
+    --btn-border: rgba(45, 79, 30, 0.15);
+    --btn-border-hover: rgba(45, 79, 30, 0.45);
+    --btn-bg-hover: rgba(45, 79, 30, 0.08);
+    --btn-glow-shadow: rgba(45, 79, 30, 0.2);
+    --accent-color: #2D4F1E;
+    --accent-hover: #4A6D3A;
+    --btn-active-scale: 0.96;
 }
 
 .dark {
@@ -15,6 +24,14 @@
     --eco-dark: #F9FBF7;
     --glass-bg: rgba(0, 0, 0, 0.2);
     --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Dark Mode Premium Button Hover Design Tokens */
+    --btn-border: rgba(143, 168, 133, 0.25);
+    --btn-border-hover: rgba(143, 168, 133, 0.6);
+    --btn-bg-hover: rgba(143, 168, 133, 0.15);
+    --btn-glow-shadow: rgba(143, 168, 133, 0.35);
+    --accent-color: #8FA885;
+    --accent-hover: #a5c29a;
 }
 
 body {
@@ -65,7 +82,10 @@ html {
 .btn-premium {
     position: relative;
     overflow: hidden;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     transition: all 0.5s ease;
     background: linear-gradient(to right, #2D4F1E, #4A6D3A);
     color: #ffffff;
@@ -122,9 +142,10 @@ html {
 }
 /* Scroll to Top Button */
 #scroll-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    position: fixed !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    left: auto !important;
     width: 3.5rem;
     height: 3.5rem;
     background-color: var(--forest-green);
@@ -162,3 +183,403 @@ html {
 .blog-post {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+/* ==========================================================================
+   PREMIUM BUTTON HOVER & INTERACTION SYSTEM (LIGHT & DARK MODES)
+   ========================================================================== */
+
+/* 1. Global Interactive Controls Transitions */
+button,
+input[type="submit"],
+.btn-premium,
+.filter-btn,
+.page-btn,
+.page-prev,
+.page-next,
+#theme-toggle,
+.rtl-toggle-btn,
+#scroll-top,
+.qty-minus,
+.qty-plus,
+.glass {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 2. Generic Button Hover (targets any button element not specifically styled) */
+button:not(.btn-premium):not(.filter-btn):not(.page-btn):not(#scroll-top):not(.qty-plus):not(.qty-minus):not(#mobile-menu-btn):hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    background-color: var(--btn-bg-hover) !important;
+    border-color: var(--btn-border-hover) !important;
+    box-shadow: 0 6px 16px var(--btn-glow-shadow) !important;
+}
+
+/* 3. Gradient Premium Button Hover (.btn-premium) */
+.btn-premium:hover {
+    transform: translateY(-2.5px) scale(1.025) !important;
+    box-shadow: 0 12px 24px -6px rgba(45, 79, 30, 0.35), 0 4px 10px -4px rgba(45, 79, 30, 0.2) !important;
+}
+
+.dark .btn-premium:hover {
+    box-shadow: 0 12px 24px -6px rgba(143, 168, 133, 0.45), 0 4px 10px -4px rgba(143, 168, 133, 0.25) !important;
+}
+
+/* 4. Tactile Button Click (Elastic Shrink Feedback) */
+button:active,
+input[type="submit"]:active,
+.btn-premium:active,
+.filter-btn:active,
+.page-btn:active,
+#theme-toggle:active,
+.rtl-toggle-btn:active,
+#scroll-top:active {
+    transform: scale(var(--btn-active-scale)) !important;
+}
+
+/* 5. Theme Toggle & RTL Toggle Outlined Buttons */
+#theme-toggle, 
+.rtl-toggle-btn {
+    border-color: var(--btn-border) !important;
+}
+
+#theme-toggle:hover, 
+.rtl-toggle-btn:hover {
+    border-color: var(--btn-border-hover) !important;
+    background-color: var(--btn-bg-hover) !important;
+    transform: scale(1.08) translateY(-1.5px) !important;
+    box-shadow: 0 6px 14px var(--btn-glow-shadow) !important;
+}
+
+/* 6. Product Actions in Shop (Quick View, Wishlist, Add to Cart Slide) */
+.group button[title="Quick View"], 
+.group button[title="Add to Wishlist"] {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.group button[title="Quick View"]:hover, 
+.group button[title="Add to Wishlist"]:hover {
+    transform: scale(1.18) !important;
+    background-color: var(--accent-color) !important;
+    color: var(--eco-light) !important;
+    box-shadow: 0 6px 16px var(--btn-glow-shadow) !important;
+}
+
+/* Add to Cart slide-up card button hover */
+.group button.absolute.bottom-4 {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.group button.absolute.bottom-4:hover {
+    background-color: var(--accent-color) !important;
+    color: var(--eco-light) !important;
+    box-shadow: 0 8px 20px var(--btn-glow-shadow) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* 7. Shop Filter Buttons (.filter-btn) */
+.filter-btn {
+    border-color: var(--btn-border) !important;
+}
+
+.filter-btn:not(.bg-forest):hover {
+    background-color: var(--btn-bg-hover) !important;
+    border-color: var(--btn-border-hover) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 8px 16px -4px var(--btn-glow-shadow) !important;
+}
+
+.filter-btn.bg-forest:hover {
+    transform: translateY(-2px) scale(1.03) !important;
+    background-color: var(--accent-hover) !important;
+    box-shadow: 0 8px 16px -4px var(--btn-glow-shadow) !important;
+}
+
+/* 8. Blog Pagination Buttons (.page-btn) */
+.page-btn, .page-prev, .page-next {
+    border-color: var(--btn-border) !important;
+}
+
+.page-btn:not(.bg-forest):hover, .page-prev:hover, .page-next:hover {
+    background-color: var(--btn-bg-hover) !important;
+    border-color: var(--btn-border-hover) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 6px 12px var(--btn-glow-shadow) !important;
+}
+
+.page-btn.bg-forest:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    background-color: var(--accent-hover) !important;
+    box-shadow: 0 6px 12px var(--btn-glow-shadow) !important;
+}
+
+/* 9. Quantity Control Adjustments (.qty-minus, .qty-plus) */
+.qty-minus, .qty-plus {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-minus:hover, .qty-plus:hover {
+    background-color: var(--btn-bg-hover) !important;
+    color: var(--accent-color) !important;
+    transform: scale(1.18) !important;
+}
+
+/* 10. Remove Item & Text-based Action Buttons */
+button.text-red-400,
+.text-red-400 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button.text-red-400:hover,
+.text-red-400:hover {
+    color: #ef4444 !important;
+    transform: translateY(-1.5px) scale(1.04) !important;
+    text-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+/* 11. Glassmorphism Buttons (e.g. outline controls, secondary links) */
+.glass:hover {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15) !important;
+}
+
+.dark .glass:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 12. Newsletter Form Submission (Inside relative group) */
+.relative.group button.absolute.right-2 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.relative.group button.absolute.right-2:hover {
+    transform: scale(1.08) !important;
+    background-color: var(--accent-hover) !important;
+    box-shadow: 0 4px 12px var(--btn-glow-shadow) !important;
+}
+
+/* 13. Mobile Menu Toggle Trigger */
+#mobile-menu-btn {
+    border-radius: 50%;
+    transition: all 0.3s ease !important;
+}
+
+#mobile-menu-btn:hover {
+    background-color: var(--btn-bg-hover) !important;
+    transform: scale(1.12) !important;
+    color: var(--accent-color) !important;
+}
+
+/* 14. Scroll to Top Button Hover Override */
+#scroll-top:hover {
+    transform: translateY(-5px) scale(1.08) !important;
+    box-shadow: 0 8px 20px var(--btn-glow-shadow) !important;
+    background-color: var(--accent-color) !important;
+    color: var(--eco-light) !important;
+}
+
+/* 15. Other Outline and White Background Buttons */
+button.bg-white:hover {
+    background-color: var(--eco-light) !important;
+    color: var(--accent-color) !important;
+    transform: translateY(-2px) scale(1.04) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark button.bg-white:hover {
+    background-color: var(--eco-dark) !important;
+    color: var(--eco-light) !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.08) !important;
+}
+
+a[class*="border border-forest"]:hover, 
+button[class*="border border-forest"]:hover,
+a[class*="border-white/20"]:hover,
+a[class*="border-white/30"]:hover {
+    border-color: var(--btn-border-hover) !important;
+    background-color: var(--btn-bg-hover) !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 8px 16px -4px var(--btn-glow-shadow) !important;
+}
+
+/* ==========================================================================
+   GLOBAL THEME-AWARE FOOTER STYLING SYSTEM
+   ========================================================================== */
+
+footer {
+    background-color: var(--eco-light) !important;
+    color: var(--eco-dark) !important;
+    border-top: 1px solid var(--btn-border) !important;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Footer Headings & Branding Name */
+footer h4 {
+    color: var(--forest-green) !important;
+    transition: color 0.3s ease !important;
+}
+
+.dark footer h4 {
+    color: var(--sage) !important;
+}
+
+footer span.text-2xl {
+    color: var(--forest-green) !important;
+    transition: color 0.3s ease !important;
+}
+
+.dark footer span.text-2xl {
+    color: var(--sage) !important;
+}
+
+/* Footer Description Paragraphs and Plain Texts */
+footer p:not(.text-white\/40 p) {
+    color: var(--eco-dark) !important;
+    opacity: 0.75 !important;
+    transition: color 0.3s ease, opacity 0.3s ease !important;
+}
+
+/* Footer List Items & Contact Details */
+footer li,
+footer li span,
+footer li i {
+    color: var(--eco-dark) !important;
+    opacity: 0.75 !important;
+    transition: color 0.3s ease, opacity 0.3s ease !important;
+}
+
+footer li i[data-lucide] {
+    color: var(--forest-green) !important;
+    opacity: 1 !important;
+}
+
+.dark footer li i[data-lucide] {
+    color: var(--sage) !important;
+}
+
+/* Footer Standard Navigation and Bottom Links */
+footer a {
+    color: var(--eco-dark) !important;
+    opacity: 0.75 !important;
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+footer a:hover {
+    color: var(--forest-green) !important;
+    opacity: 1 !important;
+}
+
+.dark footer a:hover {
+    color: var(--sage) !important;
+    opacity: 1 !important;
+}
+
+/* Footer Social Icon Links */
+footer a.w-10.h-10 {
+    background-color: rgba(45, 79, 30, 0.05) !important;
+    border: 1px solid var(--btn-border) !important;
+    color: var(--forest-green) !important;
+    opacity: 1 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark footer a.w-10.h-10 {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    color: var(--sage) !important;
+}
+
+footer a.w-10.h-10 svg {
+    color: currentColor !important;
+    transition: color 0.3s ease !important;
+}
+
+footer a.w-10.h-10:hover {
+    background-color: var(--forest-green) !important;
+    border-color: var(--forest-green) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) scale(1.1) !important;
+}
+
+.dark footer a.w-10.h-10:hover {
+    background-color: var(--sage) !important;
+    border-color: var(--sage) !important;
+    color: var(--eco-dark) !important;
+}
+
+/* Copyright and Sitemap Bottom Section */
+footer .text-white\/40,
+footer div.pt-12.border-t,
+footer div.pt-12.border-t p,
+footer div.pt-12.border-t a {
+    color: var(--eco-dark) !important;
+    opacity: 0.5 !important;
+    border-top-color: var(--btn-border) !important;
+}
+
+footer div.pt-12.border-t a:hover {
+    color: var(--forest-green) !important;
+    opacity: 1 !important;
+}
+
+.dark footer div.pt-12.border-t a:hover {
+    color: var(--sage) !important;
+}
+
+/* Newsletter Input Form Control */
+footer input[type="email"] {
+    background-color: rgba(45, 79, 30, 0.03) !important;
+    border: 1px solid var(--btn-border) !important;
+    color: var(--eco-dark) !important;
+    transition: all 0.3s ease !important;
+}
+
+.dark footer input[type="email"] {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+footer input[type="email"]:focus {
+    border-color: var(--forest-green) !important;
+    background-color: rgba(45, 79, 30, 0.06) !important;
+    box-shadow: 0 0 0 3px rgba(45, 79, 30, 0.1) !important;
+}
+
+.dark footer input[type="email"]:focus {
+    border-color: var(--sage) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 0 0 3px rgba(143, 168, 133, 0.15) !important;
+}
+
+footer input[type="email"]::placeholder {
+    color: var(--eco-dark) !important;
+    opacity: 0.5 !important;
+}
+
+/* ==========================================================================
+   GLOBAL BRAND LOGO & BRANDING NAMES TEXT CONTRAST SYSTEM
+   ========================================================================== */
+
+body:not(.bg-ecoDark) span.font-outfit.font-bold.tracking-tight:not(footer span) {
+    color: var(--forest-green) !important;
+    transition: color 0.3s ease !important;
+}
+
+.dark body:not(.bg-ecoDark) span.font-outfit.font-bold.tracking-tight:not(footer span) {
+    color: var(--sage) !important;
+}
+
+
